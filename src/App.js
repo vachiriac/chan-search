@@ -1,25 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import Search from './Components/Search';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App flex flex-col bg-gray-100 h-screen">
+			<h1 className=" text-7xl mt-32">Chan Search</h1>
+			<h2 className="mt-6 text-2xl">Search your favourite anime character quotes!</h2>
+			<div className="pt-16">
+				<Search />
+			</div>
+			<h3 className="p-6">Made with 💗 by <a href="https://github.com/zapacitu18/">Chiriac Andrei</a></h3>
+		</div>
+	);
 }
 
 export default App;
