@@ -12,7 +12,11 @@ const Search = () => {
 		const json = await res.json();
 		setData(json);
 	}
-	console.log(data);
+	if (data['error'] === "No related quotes found!") {
+		alert("No related quotes found!");
+		setData([]);
+		setCharacter("");
+	}
 	return (
 		<div className="Search-Params flex flex-col justify-center p-6 bg-gray-100">
 			<div className="flex flex-row justify-center">
@@ -37,7 +41,7 @@ const Search = () => {
 				</form>
 			</div>
 			<div className="p-6">
-				<Results data={data} />
+				<Results data={data}/>
 			</div>
 		</div>
 	);
