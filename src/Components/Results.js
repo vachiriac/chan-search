@@ -14,6 +14,7 @@ const Results = ({ data }) => {
 						anime={foo.anime}
 						character={foo.character}
 						quote={foo.quote}
+						key={ Math.random().toString(36).substr(2, 9) }
 					/>
 				))
 			)}

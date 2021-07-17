@@ -3,18 +3,18 @@ import { useState } from 'react';
 import Results from './Results.js';
 const Search = () => {
 	const [character, setCharacter] = useState('');
-	const [data, setData] = useState([]);
+	const [quoteData, setQuoteData] = useState([]);
 
 	async function requestQuote() {
 		const res = await fetch(
 			`https://animechan.vercel.app/api/quotes/character?name=${character}`
 		);
 		const json = await res.json();
-		setData(json);
+		setQuoteData(json);
 	}
-	if (data['error'] === "No related quotes found!") {
+	if (quoteData['error'] === "No related quotes found!") {
 		alert("No related quotes found!");
-		setData([]);
+		setQuoteData([]);
 		setCharacter("");
 	}
 	return (
@@ -41,7 +41,7 @@ const Search = () => {
 				</form>
 			</div>
 			<div className="p-6">
-				<Results data={data}/>
+				<Results data={quoteData}/>
 			</div>
 		</div>
 	);
