@@ -5,6 +5,9 @@ const Search = () => {
 	const [character, setCharacter] = useState('');
 	const [quoteData, setQuoteData] = useState([]);
 
+
+
+
 	async function requestQuote() {
 		const res = await fetch(
 			`https://animechan.vercel.app/api/quotes/character?name=${character}`
@@ -16,9 +19,13 @@ const Search = () => {
 		alert("No related quotes found!");
 		setQuoteData([]);
 		setCharacter("");
-	}
+	};
+
+
+
+
 	return (
-		<div className="Search-Params flex flex-col justify-center p-6 bg-gray-100">
+		<div className="Search-Params flex flex-col justify-center p-6 bg-gray-900	">
 			<div className="flex flex-row justify-center">
 				<form
 					action=""
@@ -34,10 +41,10 @@ const Search = () => {
 							value={character}
 							placeholder="Character"
 							onChange={event => setCharacter(event.target.value)}
-                            className="border border-2 rounded px-4 py-2"
+                            className="border-2 rounded px-4 py-2 border-indigo-600 placeholder-transparent::placeholder bg-gray-800 text-white"
 						/>
 					</label>
-					<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold lg:py-2 lg:px-4 rounded py-2 px-2">Submit</button>
+					<button className="bg-indigo-600 hover:bg-indigo-800 text-white font-bold lg:py-2 lg:px-4 rounded py-2 px-2">Submit</button>
 				</form>
 			</div>
 			<div className="p-6">
